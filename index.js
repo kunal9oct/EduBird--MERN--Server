@@ -30,6 +30,10 @@ app.use('/createPost', postRoutes);
 app.use('/question', questionRoutes);
 app.get('/getAll', getAll);
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 app.use((err, req, res, next) => {
     const status = err.status || 500;
     const message = err.message || 'Something went wrong!';
